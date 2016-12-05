@@ -3,6 +3,11 @@ Add a Giphy bot to your groupme chats!
 This setup requires some prior knowledge of using Github and Heroku.
 
 ## Installation
+* Prerequisites - You should have:
+ * A Github account
+ * A Heroku account
+ * A Groupme account
+
 1. Fork the repository.
 2. Create a new Heroku app, using the repository you just forked.
 3. Go to https://dev.groupme.com/session/new, login, and then go to https://dev.groupme.com/bots.
