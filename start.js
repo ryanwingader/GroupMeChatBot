@@ -25,7 +25,7 @@ app.post("/", (req, res) => {
         const toSearch = req.body.text.substring(index + toSearchFor.length);
         
         //Get the total, encoded URL we're going to pass to Giphy to search
-        const giphyurl = `http://api.giphy.com/v1/gifs/search?limit=1&q=${encodeURIComponent(toSearch)}&api_key=dc6zaTOxFJmzC`;
+        const giphyurl = `http://api.giphy.com/v1/gifs/search?limit=5&q=${encodeURIComponent(toSearch)}&api_key=dc6zaTOxFJmzC`;
         
         request.get(giphyurl, (error, response, body) => {
             //If there was an error, or no gifs were found
