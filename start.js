@@ -29,12 +29,16 @@ app.post("/", (req, res) => {
         
         request.get(giphyurl, (error, response, body) => {
             //If there was an error, or no gifs were found
-            if (error || !JSON.parse(body)["data"][0]) {
-                sendMessage(botID, "Nothing found :(");
-            } else if (body) {
-                const res = JSON.parse(body)["data"][0].images.original.url;
-                console.log(`${toSearch}=>${res}`);
-                sendMessage(botID, res);
+            const results = JSON.parse(body)["data"];
+            //Get up to the top five
+            const numTopResults = (results.length < 5) ? results.length : 5;
+            const indexSelected = Math.floor(Math.random() * (numTopResults + 1));
+            const selected = results[indexSelected].images.original.url;
+            if (error || numTopResults == 0 || !selected) {
+                sendMessage(botID, "Nothing found 😥");
+            } else {
+                console.log(`${toSearch}=>${selected}`);
+                sendMessage(botID, selected);
             }
         });
     }
