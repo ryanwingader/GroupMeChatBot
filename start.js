@@ -28,7 +28,6 @@ app.post("/", (req, res) => {
         const giphyurl = `http://api.giphy.com/v1/gifs/search?limit=5&q=${encodeURIComponent(toSearch)}&api_key=dc6zaTOxFJmzC`;
         
         request.get(giphyurl, (error, response, body) => {
-            //If there was an error, or no gifs were found
             const results = JSON.parse(body)["data"];
             //Get up to the top five
             const numTopResults = (results.length < 5) ? results.length : 5;
