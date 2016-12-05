@@ -32,7 +32,7 @@ app.post("/", (req, res) => {
             const results = JSON.parse(body)["data"];
             //Get up to the top five
             const numTopResults = (results.length < 5) ? results.length : 5;
-            if (error || numTopResults === 0 || !selected) {
+            if (error || numTopResults === 0) {
                 sendMessage(botID, "Nothing found 😥");
             } else {
                 const indexSelected = Math.floor(Math.random() * (numTopResults));
