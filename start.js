@@ -50,7 +50,7 @@ app.post("/", (req, res) => {
     }
     const badHombres = "who do we have";
     const hombreIndex = req.body.text.toLowerCase().indexOf(badHombres);
-    if ((hombreIndex != -1 || req.body.text.toLowerCase().indexOf("kick")) && req.body.sender_type !== "bot") {
+    if ((hombreIndex != -1 || req.body.text.toLowerCase().indexOf("kick") != -1) && req.body.sender_type !== "bot") {
         sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
     }
     res.end();
