@@ -44,7 +44,7 @@ app.post("/", (req, res) => {
     }
     const buildTheWall = "the wall";
     const wallIndex = req.body.text.toLowerCase().indexOf(buildTheWall);
-    if (wallIndex != -1) {
+    if (wallIndex != -1 && req.body.sender_type === "user") {
         heightOfWall += 10;
         sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
     }
