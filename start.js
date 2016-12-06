@@ -26,7 +26,7 @@ app.listen(port, () => {
 
 app.post("/", (req, res) => {
     postText = "";
-    const toSearchFor = "@betabot ";
+    const toSearchFor = "@giphy ";
     const index = req.body.text.toLowerCase().indexOf(toSearchFor);
     
     //If we found the string we're looking for get results and send them
