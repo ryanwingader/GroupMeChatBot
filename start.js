@@ -48,6 +48,11 @@ app.post("/", (req, res) => {
         heightOfWall += 10;
         sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
     }
+    const badHombres = "who do we have";
+    const hombreIndex = req.body.text.toLowerCase().indexOf(badHombres);
+    if (hombreIndex != -1 && req.body.sender_type === "user") {
+        sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
+    }
     res.end();
 });
 
