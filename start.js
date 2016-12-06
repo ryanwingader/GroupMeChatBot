@@ -19,6 +19,7 @@ const trumpChinaQuotes = ["We can’t continue to allow China to rape our countr
 
 const dict = new Map();
 dict.set("who do we have", "We got some BAD HOMBRES. OUT, OUT, OUT!");
+dict.set("kick", "We got some BAD HOMBRES. OUT, OUT, OUT!");
 dict.set("global warming", "Believe me, the concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive.");
 dict.set("daughter", "https://i.redd.it/y0mscagubhdx.jpg");
 dict.set("china", trumpChinaQuotes);
