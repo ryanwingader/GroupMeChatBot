@@ -20,6 +20,7 @@ This setup requires some prior knowledge of using Github and Heroku.
 5. Go to your Heroku app's settings, and 'reveal config vars'
   * Add the key 'BOT_ID' with the corresponding value found from your bot you created at https://dev.groupme.com/bots.
   * Add the key 'GROUP_ID' with the corresponding value found from your bot you created at https://dev.groupme.com/bots.
+  * If you'd like to make your bot Trump (optional), add the key 'TRUMP' with the value 'true'.
 6. Go to 'Deploy' in your Heroku app, scroll to the bottom, and hit 'Deploy Branch'
 7. You're done!
 
