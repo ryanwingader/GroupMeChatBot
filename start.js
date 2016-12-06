@@ -13,6 +13,12 @@ let heightOfWall = 0;
 
 const trumpChinaQuotes = ["We can’t continue to allow China to rape our country","Listen, you motherfuckers, we’re going to tax you 25 percent!","They are taking our jobs. China is taking our jobs. It is not going to happen anymore, folks!","We’ve gone from a tremendous power that is respected all over the world to somewhat of a laughing stock and all of a sudden, people are talking about China and India and other places. That was the beginning of China.","You have to bring in jobs, you have to take the jobs back from China, you have to take the jobs back from Mexico."];
 
+const dict = new Map();
+dict.set("who do we have", "We got some BAD HOMBRES. OUT, OUT, OUT!");
+dict.set("global warming", "Believe me, the concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive.");
+dict.set("daughter", "https://i.redd.it/y0mscagubhdx.jpg");
+dict.set("china", trumpChinaQuotes);
+
 app.use(bodyParser.json());
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
@@ -52,26 +58,18 @@ app.post("/", (req, res) => {
             heightOfWall += 10;
             sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
         }
-        const badHombres = "who do we have";
-        const hombreIndex = req.body.text.toLowerCase().indexOf(badHombres);
-        if (hombreIndex != -1 || req.body.text.toLowerCase().indexOf("kick") != -1) {
-            sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
-        }
-        const globalWarming = "global warming";
-        const globalWarmingIndex = req.body.text.toLowerCase().indexOf(globalWarming);
-        if (globalWarmingIndex != -1) {
-            sendMessage(botID, "Believe me, the concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive.");
-        }
-        const daughter = "daughter";
-        const daughterIndex = req.body.text.toLowerCase().indexOf(daughter);
-        if (daughterIndex != -1) {
-            sendMessage(botID, "https://i.redd.it/y0mscagubhdx.jpg");
-        }
-        const china = "china";
-        const chinaIndex = req.body.text.toLowerCase().indexOf(china);
-        if (chinaIndex != -1) {
-            const chinaMessage = trumpChinaQuotes[Math.floor(Math.random() * (trumpChinaQuotes.length))];
-            sendMessage(botID, chinaMessage);
+        for (const [key, value] of dict) {
+            let index = req.body.text.toLowerCase().indexOf(key);
+            if (index != -1) {
+                sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
+                if (typeof(value) === "string") {
+                    sendMessage(botID, value);
+                } else if (typeof(value) === "object") {
+                    sendMessage(botID, value[Math.floor(Math.random() * (value.length))]);
+                } else {
+                    console.log("Type error.");
+                }
+            }
         }
     }
     res.end();
