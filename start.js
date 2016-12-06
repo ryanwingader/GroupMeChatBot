@@ -11,7 +11,11 @@ const groupID = process.env.GROUP_ID;
 const isTrump = process.env.TRUMP;
 let heightOfWall = 0;
 
-const trumpChinaQuotes = ["We can’t continue to allow China to rape our country","Listen, you motherfuckers, we’re going to tax you 25 percent!","They are taking our jobs. China is taking our jobs. It is not going to happen anymore, folks!","We’ve gone from a tremendous power that is respected all over the world to somewhat of a laughing stock and all of a sudden, people are talking about China and India and other places. That was the beginning of China.","You have to bring in jobs, you have to take the jobs back from China, you have to take the jobs back from Mexico."];
+const trumpChinaQuotes = ["We can’t continue to allow China to rape our country",
+    "Listen, you motherfuckers, we’re going to tax you 25 percent!",
+    "They are taking our jobs. China is taking our jobs. It is not going to happen anymore, folks!",
+    "We’ve gone from a tremendous power that is respected all over the world to somewhat of a laughing stock and all of a sudden, people are talking about China and India and other places. That was the beginning of China.",
+    "You have to bring in jobs, you have to take the jobs back from China, you have to take the jobs back from Mexico."];
 
 const dict = new Map();
 dict.set("who do we have", "We got some BAD HOMBRES. OUT, OUT, OUT!");
@@ -59,7 +63,7 @@ app.post("/", (req, res) => {
             sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
         }
         for (const [key, value] of dict) {
-            let index = req.body.text.toLowerCase().indexOf(key);
+            const index = req.body.text.toLowerCase().indexOf(key);
             if (index != -1) {
                 if (typeof(value) === "string") {
                     sendMessage(botID, value);
