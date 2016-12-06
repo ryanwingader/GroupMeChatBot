@@ -8,6 +8,7 @@ const botID = process.env.BOT_ID;
 const url = "https://api.groupme.com/v3/bots/";
 const groupID = process.env.GROUP_ID;
 
+const isTrump = process.env.TRUMP;
 let heightOfWall = 0;
 
 app.use(bodyParser.json());
@@ -42,16 +43,18 @@ app.post("/", (req, res) => {
             }
         });
     }
-    const buildTheWall = "the wall";
-    const wallIndex = req.body.text.toLowerCase().indexOf(buildTheWall);
-    if (wallIndex != -1 && req.body.sender_type === "user") {
-        heightOfWall += 10;
-        sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
-    }
-    const badHombres = "who do we have";
-    const hombreIndex = req.body.text.toLowerCase().indexOf(badHombres);
-    if ((hombreIndex != -1 || req.body.text.toLowerCase().indexOf("kick") != -1) && req.body.sender_type !== "bot") {
-        sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
+    if (isTrump) {
+        const buildTheWall = "the wall";
+        const wallIndex = req.body.text.toLowerCase().indexOf(buildTheWall);
+        if (wallIndex != -1 && req.body.sender_type === "user") {
+            heightOfWall += 10;
+            sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
+        }
+        const badHombres = "who do we have";
+        const hombreIndex = req.body.text.toLowerCase().indexOf(badHombres);
+        if ((hombreIndex != -1 || req.body.text.toLowerCase().indexOf("kick") != -1) && req.body.sender_type !== "bot") {
+            sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
+        }
     }
     res.end();
 });
