@@ -8,6 +8,7 @@ const botID = process.env.BOT_ID;
 const url = "https://api.groupme.com/v3/bots/";
 const groupID = process.env.GROUP_ID;
 
+let heightOfWall = 0;
 
 app.use(bodyParser.json());
 app.listen(port, () => {
@@ -41,6 +42,12 @@ app.post("/", (req, res) => {
             }
         });
     }
+    const buildTheWall = "the wall";
+    const wallIndex = req.body.text.toLowerCase().indexOf(buildTheWall);
+    if (wallIndex != -1) {
+        heightOfWall += 10;
+        sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
+    }
     res.end();
 });
 
@@ -52,3 +59,4 @@ function sendMessage(botID, text) {
         }
     });
 }
+
