@@ -26,7 +26,7 @@ app.listen(port, () => {
 
 app.post("/", (req, res) => {
     postText = "";
-    const toSearchFor = "@giphy ";
+    const toSearchFor = "@betabot ";
     const index = req.body.text.toLowerCase().indexOf(toSearchFor);
     
     //If we found the string we're looking for get results and send them
@@ -61,7 +61,6 @@ app.post("/", (req, res) => {
         for (const [key, value] of dict) {
             let index = req.body.text.toLowerCase().indexOf(key);
             if (index != -1) {
-                sendMessage(botID, "We got some BAD HOMBRES. OUT, OUT, OUT!");
                 if (typeof(value) === "string") {
                     sendMessage(botID, value);
                 } else if (typeof(value) === "object") {
