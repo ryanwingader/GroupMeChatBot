@@ -23,6 +23,15 @@ dict.set("kick", "We got some BAD HOMBRES. OUT, OUT, OUT!");
 dict.set("global warming", "Believe me, the concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive.");
 dict.set("daughter", "https://i.redd.it/y0mscagubhdx.jpg");
 dict.set("china", trumpChinaQuotes);
+dict.set("marco", "Don't worry about it, Little Marco.");
+dict.set("jeb", "Excuse me, JEB!");
+dict.set("immigrant", "They're not sending their best. They're bringing drugs, they're bringing crime, they're rapists... And some, I assume, are good people.");
+dict.set("mexico", "When are we going to beat Mexico at the border? They're laughing at us.");
+dict.set("hillary", "Crooked Hillary is a disgrace. Sad!");
+dict.set("sad", "SAD!");
+dict.set("ted", "Lyin' Ted would have been a total DISASTER");
+dict.set("lying", "Lyin' Ted is a complete and total failure.");
+dict.set("muslim", "Donald J. Trump is calling for a total and complete shutdown of Muslims entering the United States until our country's representatives can figure out what the hell is going on.");
 
 app.use(bodyParser.json());
 app.listen(port, () => {
