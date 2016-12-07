@@ -73,7 +73,7 @@ app.post("/", (req, res) => {
             sendMessage(botID, `The wall just got 10ft higher. It's now ${heightOfWall}ft high.`);
         }
         for (const [key, value] of dict) {
-            const index = req.body.text.toLowerCase().indexOf(key);
+            const index = req.body.text.toLowerCase().split(/[ ,.]+/).indexOf(key);
             if (index != -1) {
                 if (typeof(value) === "string") {
                     sendMessage(botID, value);
