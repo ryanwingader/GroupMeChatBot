@@ -77,7 +77,7 @@ app.post("/", (req, res) => {
             if (!key.includes(" ")) {
                 index = req.body.text.toLowerCase().split(/[\W\d]+/).indexOf(key);
             } else {
-                index = req.body.text.toLowerCase().indexOf(key)
+                index = req.body.text.toLowerCase().indexOf(key);
             }
             if (index != -1) {
                 if (typeof(value) === "string") {
