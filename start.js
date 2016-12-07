@@ -24,7 +24,7 @@ dict.set("global warming", "Believe me, the concept of global warming was create
 dict.set("daughter", "https://i.redd.it/y0mscagubhdx.jpg");
 dict.set("china", trumpChinaQuotes);
 dict.set("marco", "Don't worry about it, Little Marco.");
-dict.set("jeb", "Excuse me, JEB!");
+dict.set("jeb", ["Excuse me, JEB!", "Please clap."]);
 dict.set("immigrant", "They're not sending their best. They're bringing drugs, they're bringing crime, they're rapists... And some, I assume, are good people.");
 dict.set("mexico", "When are we going to beat Mexico at the border? They're laughing at us.");
 dict.set("hillary", "Crooked Hillary is a disgrace. Sad!");
