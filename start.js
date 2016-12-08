@@ -32,6 +32,7 @@ dict.set("sad", "SAD!");
 dict.set("ted", "Lyin' Ted would have been a total DISASTER");
 dict.set("lying", "Lyin' Ted is a complete and total failure.");
 dict.set("muslim", "Donald J. Trump is calling for a total and complete shutdown of Muslims entering the United States until our country's representatives can figure out what the hell is going on.");
+dict.set("faggot", "https://www.facebook.com/photo.php?fbid=10207529284006049&set=t.100002008748066&type=3&theater");
 
 app.use(bodyParser.json());
 app.listen(port, () => {
